@@ -1,0 +1,5 @@
+rootProject.name = 'WebClientMultiClientRegistration'
+include 'ScreenShipmentDataService'
+include 'MDS'
+include 'DOORS'
+

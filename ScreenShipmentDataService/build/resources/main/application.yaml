@@ -1,0 +1,35 @@
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mds-client-model:
+            provider: mds-provider
+            client-id: test_client
+            client-secret: 3tE9mxQoGI8agdBXkmm2Q6B4ijAqf93N
+            authorization-grant-type: client_credentials
+            client-authentication-method: client_secret_post
+            scope: message.read
+            client-name: mds-client-model
+          door-client-model:
+            provider: door-provider
+            client-id: test_client_2
+            client-secret: X6xkv7OcKowY1EVc4DCY2hsGmSh8HlUE
+            authorization-grant-type: client_credentials
+            client-authentication-method: client_secret_post
+            scope: message.read
+            client-name: door-client-model
+        provider:
+          mds-provider:
+            token-uri: http://localhost:8080/realms/testRealm/protocol/openid-connect/token
+          door-provider:
+            token-uri: http://localhost:9090/realms/testRealm/protocol/openid-connect/token
